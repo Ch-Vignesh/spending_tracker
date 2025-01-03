@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Expense</title>
+
+    <!-- Inline CSS for styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            background-color: rgb(189, 189, 189);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .card-header h3 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .form-floating {
+            margin-bottom: 20px;
+        }
+        .form-floating input {
+            padding: 12px;
+            font-size: 16px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .small a {
+            color: #007bff;
+        }
+        .small a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            background-color: #0056b3;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="card-header">
+            <h3>Add Expense</h3>
+        </div>
+        <div class="card-body">
+            <!-- Start of Add Expense Form -->
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <!-- Submit Button -->
+                <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                    <button class="btn btn-primary" type="submit">Add Expense</button>
+                </div>
+            </form>
+            <!-- End of Add Expense Form -->
+        </div>
+        <div class="card-footer text-center py-3">
+            <div class="small">
+                <a href="{% url 'home' %}">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+   
+
+</body>
+</html>

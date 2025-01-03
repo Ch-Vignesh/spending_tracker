@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Login</title>
+
+    <!-- Inline CSS for styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #007bff;  /* Blue background */
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .card-header h3 {
+            font-weight: 600;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .form-floating {
+            margin-bottom: 20px;
+        }
+        .form-floating input {
+            padding: 12px;
+            font-size: 16px;
+        }
+        .form-check {
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .small a {
+            color: #007bff;
+        }
+        .small a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            background-color: #0056b3;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="text-center">Login</h3>
+        </div>
+        <div class="card-body">
+            <!-- Start of Login Form -->
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                
+                
+             
+
+                <!-- Submit Button -->
+                <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                    <a class="small" href="password.html" style="color: #007bff;">Forgot Password?</a>
+                    <button class="btn btn-primary" type="submit">Login</button>
+                </div>
+            </form>
+            <!-- End of Login Form -->
+        </div>
+        <div class="card-footer text-center py-3">
+            <div class="small">
+                <a href="{% url 'signup' %}" style="color: #007bff;">Need an account? Sign up!</a>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Bootstrap 5 Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

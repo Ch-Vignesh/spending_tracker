@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <h1>Expense Tracker</h1>
+    
+    <!-- Display the current balance -->
+    <div>
+        <h2>Balance: ${{ balance }}</h2>
+    </div>
+    
+    <!-- Filter transactions by date -->
+    <div>
+        <h3>Filter by:</h3>
+        <a href="?date_filter=day">Today</a> |
+        <a href="?date_filter=week">This Week</a> |
+        <a href="?date_filter=month">This Month</a> |
+        <a href="?date_filter=year">This Year</a> |
+        <a href="/">All Transactions</a>
+    </div>
+
+    <!-- Display the list of transactions -->
+    <h3>Transactions:</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.type }}</td>
+                    <td>{{ transaction.amount }}</td>
+                    <td>{{ transaction.category.name }}</td>
+                    <td>{{ transaction.date }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No transactions found</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sign Up</title>
+
+    <!-- Inline CSS for styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #007bff;  /* Blue background */
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .card-header h3 {
+            font-weight: 600;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .form-floating {
+            margin-bottom: 20px;
+        }
+        .form-floating input {
+            padding: 12px;
+            font-size: 16px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .form-check {
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .small a {
+            color: #007bff;
+        }
+        .small a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            background-color: #0056b3;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="text-center">Sign Up</h3>
+        </div>
+        <div class="card-body">
+            <!-- Start of Sign Up Form -->
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                
+              
+                
+                <!-- Submit Button -->
+                <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                    <button class="btn btn-primary" type="submit">Sign Up</button>
+                </div>
+            </form>
+            <!-- End of Sign Up Form -->
+        </div>
+        <div class="card-footer text-center py-3">
+            <div class="small">
+                <a href="{% url 'login' %}" style="color: #007bff;">Already have an account? Login</a>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
